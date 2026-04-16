@@ -5,6 +5,54 @@
 
 
 /* =======================================================
+   CONTROLE DO MENU LATERAL MOBILE
+   ======================================================= */
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const menuClose = document.getElementById('mobile-menu-close');
+    const menuOverlay = document.getElementById('mobile-menu-overlay');
+    const menuLinks = document.querySelectorAll('.mobile-menu-link');
+
+    // Abrir menu
+    menuToggle.addEventListener('click', function() {
+        menuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Fechar menu
+    menuClose.addEventListener('click', function() {
+        menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    // Fechar menu ao clicar no overlay
+    menuOverlay.addEventListener('click', function(e) {
+        if (e.target === menuOverlay) {
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Fechar menu ao clicar em links
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // Fechar menu com ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && menuOverlay.classList.contains('active')) {
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+});
+
+
+/* =======================================================
    CONTROLE DA NAVBAR AO ROLAR A PÁGINA
    A navbar desaparece ao descer e reaparece ao subir
    ======================================================= */

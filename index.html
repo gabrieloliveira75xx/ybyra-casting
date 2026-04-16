@@ -34,8 +34,10 @@
       <img src="Ybyracasting.png" class="brand-logo" alt="Ybyra Casting">
     </a>
   </div>
-  <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Menu">
-    <span class="navbar-toggler-icon"></span>
+  <button class="navbar-toggler" id="mobile-menu-toggle" aria-label="Menu">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
   </button>
   <div class="collapse navbar-collapse" id="menu">
     <ul class="navbar-nav nav-links">
@@ -63,6 +65,30 @@
 </div>
 </div>
 </nav>
+
+<!-- Menu Lateral Mobile -->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay">
+  <div class="mobile-menu-sidebar">
+    <div class="mobile-menu-header">
+      <img src="Ybyracasting.png" class="mobile-menu-logo" alt="Ybyra Casting">
+      <button class="mobile-menu-close" id="mobile-menu-close">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <ul class="mobile-menu-nav">
+      <li><a href="#hero" class="mobile-menu-link">Home</a></li>
+      <li><a href="#servicos" class="mobile-menu-link">Serviços</a></li>
+      <li><a href="#sobre" class="mobile-menu-link">Sobre</a></li>
+      <li><a href="#talentos" class="mobile-menu-link">Talentos</a></li>
+      <li><a href="#contato" class="mobile-menu-link">Contato</a></li>
+    </ul>
+    <div class="mobile-menu-cta">
+      <a href="contato.html" class="btn btn-dark btn-mobile">Solicitar Elenco</a>
+      <a href="cadastro.html" class="btn btn-outline-dark btn-mobile">Inscreva-se</a>
+    </div>
+  </div>
+</div>
 
 
 <!-- ================= HERO ================= -->
@@ -221,39 +247,6 @@ Cadastrar no Casting
       </div>
     </div>
   </div>
-</section>
-
-
-<!-- ================= BLOG ================= -->
-
-<section id="blog" class="blog">
-
-<div class="container">
-
-<h2 class="text-center mb-5">Notícias e Atualizações</h2>
-
-<div class="row">
-
-<div class="col-md-4">
-
-<div class="card-blog">
-
-<h4>
-Filme premiado no Oscar movimenta o cenário cultural
-</h4>
-
-<p>
-Análise do impacto das premiações internacionais no mercado cultural e audiovisual.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 

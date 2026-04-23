@@ -1,0 +1,36 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ybyra-casting-web
+    restart: unless-stopped
+    ports:
+      - "15593:80"
+    networks:
+      - cloudflared
+    depends_on:
+      - ghost
+
+  ghost:
+    image: ghost:5-alpine
+    container_name: ybyra-casting-ghost
+    restart: unless-stopped
+    ports:
+      - "15594:2368"
+    environment:
+      url: http://localhost:15594
+      database__client: sqlite3
+      database__connection__filename: content/data/ghost.db
+      paths__contentPath: content
+    volumes:
+      - ghost_content:/var/lib/ghost/content
+    networks:
+      - cloudflared
+
+networks:
+  cloudflared:
+    external: true
+
+volumes:
+  ghost_content:
